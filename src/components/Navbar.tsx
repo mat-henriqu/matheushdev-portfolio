@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                   </span>
                 )}
               </button>
-              {isCartOpen && <CartDropdown onClose={() => setIsCartOpen(false)} />}
+              <CartDropdown open={isCartOpen} onOpenChange={setIsCartOpen} />
             </div>
 
             {/* CTA Button */}
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                   </span>
                 )}
               </button>
-              {isCartOpen && <CartDropdown onClose={() => setIsCartOpen(false)} />}
+              <CartDropdown open={isCartOpen} onOpenChange={setIsCartOpen} />
             </div>
 
             <button 

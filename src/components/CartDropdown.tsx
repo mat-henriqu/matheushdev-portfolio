@@ -1,28 +1,24 @@
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { useCart } from '@/context/CartContext';
 import { X, ExternalLink, Trash2 } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface CartDropdownProps {
-  onClose: () => void;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
-const CartDropdown: React.FC<CartDropdownProps> = ({ onClose }) => {
+const CartDropdown: React.FC<CartDropdownProps> = ({ open, onOpenChange }) => {
   const { cart, removeFromCart, updateComments, clearCart } = useCart();
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        onClose();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [onClose]);
 
   const handleSendToWhatsApp = () => {
     if (cart.items.length === 0) {
@@ -60,7 +56,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ onClose }) => {
     // Clear cart and close dropdown after a small delay to ensure WhatsApp opens properly
     setTimeout(() => {
       clearCart();
-      onClose();
+      onOpenChange(false);
     }, 500);
     
     toast({
@@ -69,73 +65,61 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ onClose }) => {
     });
   };
 
-  // Add stopPropagation to prevent clicks inside the dropdown from propagating
-  const handleDropdownClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-  };
-
   return (
-    <div 
-      ref={dropdownRef}
-      className="absolute right-0 mt-2 w-80 sm:w-96 bg-mathdev-secondary border border-mathdev-primary/20 rounded-lg shadow-lg animate-fade-in z-50"
-      onClick={handleDropdownClick}
-    >
-      <div className="p-4 border-b border-mathdev-primary/20">
-        <div className="flex items-center justify-between">
-          <h3 className="font-medium text-white">Carrinho de Serviços</h3>
-          <button onClick={onClose} className="text-gray-400 hover:text-white">
-            <X size={18} />
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="bg-mathdev-secondary border border-mathdev-primary/20 text-white max-w-[450px] w-[90vw] max-h-[85vh] flex flex-col">
+        <DialogHeader className="border-b border-mathdev-primary/20 pb-4">
+          <DialogTitle className="text-white">Carrinho de Serviços</DialogTitle>
+        </DialogHeader>
+
+        <div className="flex-1 overflow-y-auto py-4 px-4">
+          {cart.items.length === 0 ? (
+            <p className="text-center text-gray-400 py-4">Seu carrinho está vazio</p>
+          ) : (
+            <ul className="space-y-4">
+              {cart.items.map((item) => (
+                <li key={item.id} className="border-b border-mathdev-primary/10 pb-4">
+                  <div className="flex justify-between">
+                    <h4 className="font-medium text-white">{item.title}</h4>
+                    <button 
+                      onClick={() => removeFromCart(item.id)}
+                      className="text-gray-400 hover:text-red-500"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
+                  <p className="text-sm text-gray-400 mt-1">{item.description}</p>
+                  
+                  <div className="mt-2">
+                    <label className="text-sm text-gray-300 block mb-1">
+                      Adicionar comentários:
+                    </label>
+                    <textarea 
+                      value={item.comments || ''}
+                      onChange={(e) => updateComments(item.id, e.target.value)}
+                      className="w-full rounded bg-mathdev-dark border border-mathdev-primary/20 text-white p-2 text-sm"
+                      placeholder="Tamanho, funcionalidades específicas, prazo, etc."
+                      rows={2}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="p-4 border-t border-mathdev-primary/20 mt-auto">
+          <button
+            onClick={handleSendToWhatsApp}
+            className="w-full bg-mathdev-primary text-white py-2 rounded flex items-center justify-center space-x-2 hover:bg-mathdev-primary/90"
+            disabled={cart.items.length === 0}
+          >
+            <span>Solicitar Orçamento</span>
+            <ExternalLink size={16} />
           </button>
         </div>
-      </div>
-
-      <div className="max-h-80 overflow-y-auto p-4">
-        {cart.items.length === 0 ? (
-          <p className="text-center text-gray-400 py-4">Seu carrinho está vazio</p>
-        ) : (
-          <ul className="space-y-4">
-            {cart.items.map((item) => (
-              <li key={item.id} className="border-b border-mathdev-primary/10 pb-4">
-                <div className="flex justify-between">
-                  <h4 className="font-medium text-white">{item.title}</h4>
-                  <button 
-                    onClick={() => removeFromCart(item.id)}
-                    className="text-gray-400 hover:text-red-500"
-                  >
-                    <Trash2 size={16} />
-                  </button>
-                </div>
-                <p className="text-sm text-gray-400 mt-1">{item.description}</p>
-                
-                <div className="mt-2">
-                  <label className="text-sm text-gray-300 block mb-1">
-                    Adicionar comentários:
-                  </label>
-                  <textarea 
-                    value={item.comments || ''}
-                    onChange={(e) => updateComments(item.id, e.target.value)}
-                    className="w-full rounded bg-mathdev-dark border border-mathdev-primary/20 text-white p-2 text-sm"
-                    placeholder="Tamanho, funcionalidades específicas, prazo, etc."
-                    rows={2}
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      <div className="p-4 border-t border-mathdev-primary/20">
-        <button
-          onClick={handleSendToWhatsApp}
-          className="w-full bg-mathdev-primary text-white py-2 rounded flex items-center justify-center space-x-2 hover:bg-mathdev-primary/90"
-          disabled={cart.items.length === 0}
-        >
-          <span>Solicitar Orçamento</span>
-          <ExternalLink size={16} />
-        </button>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
