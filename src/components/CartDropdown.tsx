@@ -56,8 +56,12 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ onClose }) => {
 
     // Open WhatsApp in a new tab
     window.open(whatsappURL, '_blank');
-    clearCart(); // Clear cart after sending
-    onClose(); // Close dropdown
+    
+    // Clear cart and close dropdown after a small delay to ensure WhatsApp opens properly
+    setTimeout(() => {
+      clearCart();
+      onClose();
+    }, 500);
     
     toast({
       title: "Orçamento enviado!",
