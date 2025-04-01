@@ -69,10 +69,16 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ onClose }) => {
     });
   };
 
+  // Add stopPropagation to prevent clicks inside the dropdown from propagating
+  const handleDropdownClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
     <div 
       ref={dropdownRef}
       className="absolute right-0 mt-2 w-80 sm:w-96 bg-mathdev-secondary border border-mathdev-primary/20 rounded-lg shadow-lg animate-fade-in z-50"
+      onClick={handleDropdownClick}
     >
       <div className="p-4 border-b border-mathdev-primary/20">
         <div className="flex items-center justify-between">
