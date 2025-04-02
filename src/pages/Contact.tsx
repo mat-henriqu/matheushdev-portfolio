@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
 import { useToast } from '@/hooks/use-toast';
@@ -118,7 +119,7 @@ const Contact = () => {
       {/* Contact Cards */}
       <section className="py-10 bg-mathdev-dark">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="bg-mathdev-secondary border-mathdev-primary/20 p-6 flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-mathdev-primary/20 rounded-full flex items-center justify-center mb-4">
                 <Phone className="text-mathdev-primary" size={24} />
@@ -165,6 +166,8 @@ const Contact = () => {
               </a>
             </Card>
             
+            {/* Uncomment this section if you want to add a Calendly link */}
+            {/*
             <Card className="bg-mathdev-secondary border-mathdev-primary/20 p-6 flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-mathdev-primary/20 rounded-full flex items-center justify-center mb-4">
                 <Calendar className="text-mathdev-primary" size={24} />
@@ -180,6 +183,7 @@ const Contact = () => {
                 Agendar Agora
               </a>
             </Card>
+            */}
           </div>
         </div>
       </section>
