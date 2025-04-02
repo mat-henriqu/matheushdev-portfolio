@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import Layout from '@/components/Layout';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 import { Card } from '@/components/ui/card';
 import { Instagram, Mail, Phone, Calendar, Send } from 'lucide-react';
 
@@ -26,20 +25,37 @@ const Contact = () => {
     // Here you would normally send the form data to your backend or email service
     console.log('Form submitted:', formData);
     
+    // Create the email content with all form details
+    const emailSubject = encodeURIComponent(`Contato do Site: ${formData.subject}`);
+    let emailBody = encodeURIComponent(
+      `Nome: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Telefone: ${formData.phone || 'Não informado'}\n` +
+      `Assunto: ${formData.subject}\n\n` +
+      `Mensagem:\n${formData.message}\n\n` +
+      `Enviado via formulário de contato do site MatheushDev.`
+    );
+    
+    // Open email client with pre-filled email
+    window.location.href = `mailto:theush933@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    
     // Show success message
     toast({
       title: "Mensagem enviada!",
-      description: "Entraremos em contato o mais breve possível.",
+      description: "Seu cliente de email foi aberto com os detalhes do formulário.",
     });
     
-    // Clear form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    // Don't clear form immediately since the user might need to copy information
+    // if their email client doesn't open automatically
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+    }, 2000);
   };
 
   return (
