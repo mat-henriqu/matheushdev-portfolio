@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <a
-                  href="mailto:contato@MatheushDev.com"
+                  href="mailto:theush933@gmail.com"
                   className="flex items-center space-x-3 text-gray-400 hover:text-mathdev-primary transition-colors"
                 >
                   <Mail size={18} />

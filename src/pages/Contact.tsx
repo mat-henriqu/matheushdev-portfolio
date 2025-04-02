@@ -142,10 +142,10 @@ const Contact = () => {
               <h3 className="text-white font-semibold mb-2">E-mail</h3>
               <p className="text-gray-400 mb-4">Para contato formal e orçamentos</p>
               <a 
-                href="mailto:contato@MatheushDev.com" 
+                href="mailto:theush933@gmail.com" 
                 className="text-mathdev-primary hover:underline"
               >
-                contato@MatheushDev.com
+                theush933@gmail.com
               </a>
             </Card>
             
