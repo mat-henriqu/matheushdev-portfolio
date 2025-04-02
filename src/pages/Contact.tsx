@@ -13,6 +13,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -21,33 +22,74 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     // Here you would normally send the form data to your backend or email service
     console.log('Form submitted:', formData);
     
-    // Create the email content with all form details
+    // Create a more professional email format with HTML
     const emailSubject = encodeURIComponent(`Contato do Site: ${formData.subject}`);
-    let emailBody = encodeURIComponent(
+    
+    // Create HTML email body with better formatting
+    const htmlEmailBody = `
+      <html>
+        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 5px;">
+          <h2 style="color: #6B21A8; border-bottom: 1px solid #eee; padding-bottom: 10px;">Novo Contato Via Site</h2>
+          
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; width: 120px;">Nome:</td>
+              <td style="padding: 8px 0;">${formData.name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Email:</td>
+              <td style="padding: 8px 0;"><a href="mailto:${formData.email}" style="color: #6B21A8;">${formData.email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Telefone:</td>
+              <td style="padding: 8px 0;">${formData.phone || 'Não informado'}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold;">Assunto:</td>
+              <td style="padding: 8px 0;">${formData.subject}</td>
+            </tr>
+          </table>
+          
+          <div style="background-color: #f9f9f9; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+            <h3 style="margin-top: 0; color: #6B21A8;">Mensagem:</h3>
+            <p style="white-space: pre-line;">${formData.message}</p>
+          </div>
+          
+          <p style="font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 10px; margin-top: 20px;">
+            Esta mensagem foi enviada através do formulário de contato em <a href="https://matheushdev.com" style="color: #6B21A8;">MatheushDev.com</a> em ${new Date().toLocaleString('pt-BR')}
+          </p>
+        </body>
+      </html>
+    `;
+
+    // Unfortunately, mailto: doesn't support HTML formatting, so we need to create a plain text version as well
+    const plainTextEmailBody = encodeURIComponent(
+      `NOVO CONTATO VIA SITE\n\n` +
       `Nome: ${formData.name}\n` +
       `Email: ${formData.email}\n` +
       `Telefone: ${formData.phone || 'Não informado'}\n` +
       `Assunto: ${formData.subject}\n\n` +
-      `Mensagem:\n${formData.message}\n\n` +
-      `Enviado via formulário de contato do site MatheushDev.`
+      `MENSAGEM:\n${formData.message}\n\n` +
+      `Enviado via formulário de contato do site MatheushDev em ${new Date().toLocaleString('pt-BR')}`
     );
     
     // Open email client with pre-filled email
-    window.location.href = `mailto:theush933@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    window.location.href = `mailto:theush933@gmail.com?subject=${emailSubject}&body=${plainTextEmailBody}`;
     
-    // Show success message
+    // Show success message with more detail
     toast({
-      title: "Mensagem enviada!",
-      description: "Seu cliente de email foi aberto com os detalhes do formulário.",
+      title: "Mensagem preparada para envio!",
+      description: "Seu cliente de email foi aberto com os detalhes do formulário. Por favor, envie a mensagem para completar o contato.",
     });
     
-    // Don't clear form immediately since the user might need to copy information
-    // if their email client doesn't open automatically
+    // Reset submission state and form after a delay
     setTimeout(() => {
+      setIsSubmitting(false);
       setFormData({
         name: '',
         email: '',
@@ -55,7 +97,7 @@ const Contact = () => {
         subject: '',
         message: ''
       });
-    }, 2000);
+    }, 2500);
   };
 
   return (
@@ -168,6 +210,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-2 rounded-md bg-mathdev-secondary border border-mathdev-primary/20 text-white focus:border-mathdev-primary outline-none"
+                      placeholder="Seu nome completo"
                     />
                   </div>
                   
@@ -181,6 +224,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-2 rounded-md bg-mathdev-secondary border border-mathdev-primary/20 text-white focus:border-mathdev-primary outline-none"
+                      placeholder="seu@email.com"
                     />
                   </div>
                 </div>
@@ -195,6 +239,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-2 rounded-md bg-mathdev-secondary border border-mathdev-primary/20 text-white focus:border-mathdev-primary outline-none"
+                      placeholder="(00) 00000-0000"
                     />
                   </div>
                   
@@ -209,7 +254,10 @@ const Contact = () => {
                       className="w-full px-4 py-2 rounded-md bg-mathdev-secondary border border-mathdev-primary/20 text-white focus:border-mathdev-primary outline-none"
                     >
                       <option value="">Selecione um assunto</option>
-                      <option value="Orçamento">Orçamento</option>
+                      <option value="Orçamento de Website">Orçamento de Website</option>
+                      <option value="Desenvolvimento de Aplicativo">Desenvolvimento de Aplicativo</option>
+                      <option value="Redesign de Site">Redesign de Site</option>
+                      <option value="Consultoria">Consultoria</option>
                       <option value="Dúvida">Dúvida</option>
                       <option value="Parceria">Parceria</option>
                       <option value="Outro">Outro</option>
@@ -227,33 +275,56 @@ const Contact = () => {
                     required
                     rows={5}
                     className="w-full px-4 py-2 rounded-md bg-mathdev-secondary border border-mathdev-primary/20 text-white focus:border-mathdev-primary outline-none resize-none"
+                    placeholder="Descreva seu projeto ou dúvida em detalhes..."
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="btn-primary flex items-center justify-center gap-2 px-8 py-3"
+                  className="btn-primary flex items-center justify-center gap-2 px-8 py-3 w-full sm:w-auto"
+                  disabled={isSubmitting}
                 >
-                  <Send size={18} />
-                  <span>Enviar Mensagem</span>
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-pulse">Preparando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={18} />
+                      <span>Enviar Mensagem</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>
             
             <div className="hidden lg:block">
-              <div className="relative h-full w-full rounded-lg overflow-hidden">
+              <div className="relative h-full w-full rounded-lg overflow-hidden shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80" 
                   alt="Contact MatheushDev" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-mathdev-dark/80 to-transparent flex flex-col justify-end p-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Vamos Conversar
-                  </h3>
-                  <p className="text-gray-300">
-                    Estamos prontos para transformar suas ideias em projetos de sucesso.
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-mathdev-dark/90 via-mathdev-dark/40 to-transparent flex flex-col justify-end p-8">
+                  <div className="bg-mathdev-secondary/80 backdrop-blur-sm p-6 rounded-lg border border-mathdev-primary/20">
+                    <h3 className="text-2xl font-bold text-white mb-3">
+                      Vamos Transformar sua Ideia em Realidade
+                    </h3>
+                    <p className="text-gray-200 mb-4">
+                      Estou pronto para ajudar a desenvolver sua presença digital com soluções personalizadas e de alta qualidade.
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex items-center gap-2 text-gray-200">
+                        <span className="text-mathdev-primary">✓</span> Websites responsivos e modernos
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-200">
+                        <span className="text-mathdev-primary">✓</span> Aplicações web personalizadas
+                      </li>
+                      <li className="flex items-center gap-2 text-gray-200">
+                        <span className="text-mathdev-primary">✓</span> Interfaces intuitivas e atraentes
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
