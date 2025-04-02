@@ -30,7 +30,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ open, onOpenChange }) => {
       return;
     }
 
-    let message = "*Solicitação de Orçamento - MatheusDev*\n\n";
+    let message = "*Solicitação de Orçamento - MatheushDev*\n\n";
     message += "Olá! Estou interessado nos seguintes serviços:\n\n";
 
     cart.items.forEach((item, index) => {

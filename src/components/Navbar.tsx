@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold text-white">
-            <span className="text-mathdev-primary">Matheus</span>Dev
+            <span className="text-mathdev-primary">Matheush</span>Dev
           </Link>
 
           {/* Desktop Navigation */}

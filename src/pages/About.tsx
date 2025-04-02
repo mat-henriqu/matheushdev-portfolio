@@ -10,7 +10,7 @@ const About = () => {
       <section className="pt-32 pb-16 bg-gradient-to-b from-mathdev-primary/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Sobre a <span className="text-mathdev-primary">MatheusDev</span>
+            Sobre a <span className="text-mathdev-primary">MatheushDev</span>
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
             Conheça mais sobre nossa história, valores e a paixão por criar
@@ -29,7 +29,7 @@ const About = () => {
               </h2>
               
               <p className="mt-4 text-gray-300">
-                A MatheusDev nasceu da paixão por criar soluções digitais que realmente 
+                A MatheushDev nasceu da paixão por criar soluções digitais que realmente 
                 impactam negócios e pessoas. Desde o início, nossa missão tem sido 
                 transformar ideias em experiências digitais memoráveis e eficientes.
               </p>
@@ -50,7 +50,7 @@ const About = () => {
             <div className="order-1 lg:order-2 rounded-lg overflow-hidden shadow-xl">
               <img 
                 src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80" 
-                alt="MatheusDev" 
+                alt="MatheushDev" 
                 className="w-full h-full object-cover"
               />
             </div>

@@ -84,10 +84,10 @@ const Contact = () => {
               <h3 className="text-white font-semibold mb-2">E-mail</h3>
               <p className="text-gray-400 mb-4">Para contato formal e orçamentos</p>
               <a 
-                href="mailto:contato@matheusdev.com" 
+                href="mailto:contato@MatheushDev.com" 
                 className="text-mathdev-primary hover:underline"
               >
-                contato@matheusdev.com
+                contato@MatheushDev.com
               </a>
             </Card>
             
@@ -228,7 +228,7 @@ const Contact = () => {
               <div className="relative h-full w-full rounded-lg overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80" 
-                  alt="Contact MatheusDev" 
+                  alt="Contact MatheushDev" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-mathdev-dark/80 to-transparent flex flex-col justify-end p-8">

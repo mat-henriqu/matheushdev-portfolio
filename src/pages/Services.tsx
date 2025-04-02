@@ -3,13 +3,14 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/services/ServiceCard';
 import { ServiceItem } from '@/types/cart';
+import imgHandsOnNote from "@/assets/img/imgHandsOnNote.avif";
 
 const services: ServiceItem[] = [
   {
     id: 'landing-page',
     title: 'Landing Page',
     description: 'Página única e objetiva, ideal para apresentação rápida de empresas ou profissionais, contendo informações essenciais, botão de contato e elementos de conversão.',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
+    image: imgHandsOnNote,
   },
   {
     id: 'e-commerce',
@@ -37,11 +38,24 @@ const services: ServiceItem[] = [
   },
   {
     id: 'website-pessoal',
-    title: 'Website Pessoal',
-    description: 'Ideal para profissionais que desejam destacar seu trabalho, portfólio e trajetória de forma única e impactante, criando uma marca pessoal online.',
+    title: 'Website Pessoal ou Profissional',
+    description: 'Desenvolvimento de um site personalizado para destacar sua trajetória, portfólio e serviços, seja para um profissional autônomo ou empresa.',
     image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'portfolio-interativo',
+    title: 'Portfólio Interativo',
+    description: 'Site personalizado para artistas, designers e fotógrafos exibirem seus trabalhos de maneira visualmente impactante e profissional.',
+    image: 'https://images.unsplash.com/photo-1527256671300-cbe10882f030?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'site-eventos',
+    title: 'Site para Eventos',
+    description: 'Página dedicada para eventos, conferências ou festas, incluindo agenda, localização, RSVP e informações relevantes.',
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80',
   }
 ];
+
 
 const Services = () => {
   return (
@@ -53,12 +67,12 @@ const Services = () => {
             Nossos <span className="text-mathdev-primary">Serviços</span>
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-            Desenvolvemos soluções digitais personalizadas para atender às 
+            Desenvolvemos soluções digitais personalizadas para atender às
             necessidades específicas do seu negócio ou projeto pessoal.
           </p>
         </div>
       </section>
-      
+
       {/* Services Grid */}
       <section className="py-16 bg-mathdev-dark">
         <div className="container mx-auto px-4">
@@ -69,7 +83,7 @@ const Services = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Process Section */}
       <section className="py-16 bg-mathdev-secondary">
         <div className="container mx-auto px-4">
@@ -82,7 +96,7 @@ const Services = () => {
               para garantir o sucesso do seu projeto.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -121,23 +135,23 @@ const Services = () => {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-mathdev-primary/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white">
             Pronto para começar seu projeto?
           </h2>
-          
+
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
             Entre em contato hoje mesmo para discutirmos como podemos
             ajudar a transformar sua ideia em realidade.
           </p>
-          
+
           <div className="mt-8">
-            <a 
-              href="https://wa.me/+5534997638331" 
-              target="_blank" 
+            <a
+              href="https://wa.me/+5534997638331"
+              target="_blank"
               rel="noopener noreferrer"
               className="btn-primary px-8 py-3"
             >

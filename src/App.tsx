@@ -31,7 +31,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/servicos" element={<Services />} />
+            {/* Uncomment the following line to enable the Portfolio page 
             <Route path="/portfolio" element={<Portfolio />} />
+            */}
             <Route path="/sobre" element={<About />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

@@ -63,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// MatheusDev custom colors
+				// MatheushDev custom colors
 				mathdev: {
 					primary: '#0EA5E9',   // Bright blue accent
 					secondary: '#1E293B', // Dark blue/gray background

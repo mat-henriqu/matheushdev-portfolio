@@ -116,12 +116,12 @@ const Portfolio = () => {
               {
                 name: 'Maria Silva',
                 role: 'CEO, Empresa de Moda',
-                testimonial: 'O MatheusDev superou todas as expectativas. Nosso e-commerce teve um aumento de 40% nas vendas após o lançamento do novo site.'
+                testimonial: 'O MatheushDev superou todas as expectativas. Nosso e-commerce teve um aumento de 40% nas vendas após o lançamento do novo site.'
               },
               {
                 name: 'João Pereira',
                 role: 'Consultor Financeiro',
-                testimonial: 'A landing page desenvolvida pelo MatheusDev transformou meu negócio. A taxa de conversão aumentou significativamente.'
+                testimonial: 'A landing page desenvolvida pelo MatheushDev transformou meu negócio. A taxa de conversão aumentou significativamente.'
               },
               {
                 name: 'Ana Costa',

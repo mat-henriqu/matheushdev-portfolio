@@ -24,13 +24,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
 
   const handleDirectWhatsApp = () => {
     const message = encodeURIComponent(
-      `*Olá! Estou interessado no serviço: ${service.title}*\n\nGostaria de mais informações e um orçamento para este serviço.`
+      `E ai, Matheus! Estou interessado no serviço: ${service.title}.\n\nGostaria de mais informações e um orçamento para este serviço.`
     );
     window.open(`https://wa.me/+5534997638331?text=${message}`, '_blank');
   };
 
   return (
     <Card className="bg-mathdev-secondary border-mathdev-primary/20 overflow-hidden card-hover">
+      {/* Image Section
       <div className="aspect-video overflow-hidden">
         <img 
           src={service.image} 
@@ -38,14 +39,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />
       </div>
-      
+       */}
+
       <div className="p-6">
         <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-        
+
         <p className="mt-2 text-gray-400 text-sm">
           {service.description}
         </p>
-        
+
         <div className="mt-4 flex flex-col sm:flex-row gap-2">
           <button
             onClick={handleAddToCart}
@@ -54,7 +56,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             <ShoppingCart size={16} />
             <span>Adicionar</span>
           </button>
-          
+
           <button
             onClick={handleDirectWhatsApp}
             className="btn-outlined flex-1 flex items-center justify-center gap-2"
