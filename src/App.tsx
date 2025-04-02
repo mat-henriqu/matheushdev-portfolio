@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/context/CartContext";
 
-// Páginas
+// Pages
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
@@ -13,9 +13,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
-/**
- * Configuração do cliente de query para gerenciamento de estado e requisições
- */
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -25,11 +22,6 @@ const queryClient = new QueryClient({
   },
 });
 
-/**
- * Componente principal da aplicação
- * 
- * Configura os providers globais e as rotas da aplicação
- */
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <CartProvider>
@@ -39,7 +31,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/servicos" element={<Services />} />
+            {/* Uncomment the following line to enable the Portfolio page 
             <Route path="/portfolio" element={<Portfolio />} />
+            */}
             <Route path="/sobre" element={<About />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
