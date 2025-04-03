@@ -44,7 +44,7 @@ const faqItems: FAQItem[] = [
  */
 const FAQSection: React.FC = () => {
   return (
-    <section className="py-16 bg-mathdev-secondary">
+    <section className="py-16 bg-mathdev-primary/10">
       <div className="container mx-auto px-4">
         {/* Cabeçalho da seção */}
         <div className="text-center mb-12">

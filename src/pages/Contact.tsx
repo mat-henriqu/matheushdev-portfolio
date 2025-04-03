@@ -30,26 +30,27 @@ const Contact: React.FC = () => {
           </p>
         </div>
       </section>
-      
-      {/* Transição gradiente */}
+
+      {/* Transição gradiente 
       <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
-      
+      */}
+
       {/* Cartões de Contato */}
       <section className="py-10 bg-mathdev-dark">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Cartão de WhatsApp */}
-            <ContactCard 
+            <ContactCard
               icon={Phone}
               title="WhatsApp"
               description="Atendimento rápido via mensagem"
               link="https://wa.me/+5534997638331"
-              linkText="+55 (34) 99763-8331"
+              linkText="Conversar"
               external={true}
             />
-            
+
             {/* Cartão de E-mail */}
-            <ContactCard 
+            <ContactCard
               icon={Mail}
               title="E-mail"
               description="Para contato formal e orçamentos"
@@ -57,9 +58,9 @@ const Contact: React.FC = () => {
               linkText="theush933@gmail.com"
               external={false}
             />
-            
+
             {/* Cartão de Instagram */}
-            <ContactCard 
+            <ContactCard
               icon={Instagram}
               title="Instagram"
               description="Acompanhe nosso trabalho"
@@ -67,7 +68,7 @@ const Contact: React.FC = () => {
               linkText="@matheushdev_"
               external={true}
             />
-            
+
             {/* Cartão de Calendly - Comentado */}
             {/* Descomente esta seção se quiser adicionar um link do Calendly
             <ContactCard 
@@ -82,17 +83,18 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      {/* Transição gradiente */}
+
+      {/* Transição gradiente 
       <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-dark"></div>
-      
+      */}
+
       {/* Formulário de Contato */}
       <section className="py-16 bg-mathdev-dark">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Formulário */}
             <ContactForm />
-            
+
             {/* Barra lateral com informações adicionais */}
             <div className="hidden lg:block">
               <ContactSidebar />
@@ -100,10 +102,11 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Transição gradiente */}
-      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-secondary"></div>
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-primary/10"></div>
       
+
       {/* Seção de FAQs */}
       <FAQSection />
     </Layout>

@@ -9,7 +9,6 @@ import { ServiceItem } from '@/types/cart';
 import img2152 from "@/assets/img/IMG_2152.png";
 import imgHandsOnNote from "@/assets/img/imgHandsOnNote.avif";
 
-// Usando versões otimizadas das imagens com parâmetros de tamanho e qualidade
 const featuredServices: ServiceItem[] = [
   {
     id: 'landing-page',
@@ -38,8 +37,9 @@ const Index = () => {
     <Layout>
       <Hero />
       
-      {/* Transition gradient */}
+      {/* Transition gradient 
       <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
+      */}
       
       <section className="py-12 bg-mathdev-dark">
         <div className="container mx-auto px-4">
