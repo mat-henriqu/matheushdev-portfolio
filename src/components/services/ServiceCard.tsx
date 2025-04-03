@@ -29,9 +29,27 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
     window.open(`https://wa.me/+5534997638331?text=${message}`, '_blank');
   };
 
+  // Exemplo real se disponível
+  const getRealExample = () => {
+    const examples = {
+      'landing-page': null,
+      'e-commerce': null,
+      'loja-online': null,
+      'pagina-links': 'https://mat-henriqu.github.io/link-tree/',
+      'website-institucional': 'https://psijoaocorrea.site',
+      'website-pessoal': 'https://mat-henriqu.netlify.app',
+      'portfolio-interativo': null,
+      'site-eventos': null
+    };
+
+    return examples[service.id as keyof typeof examples];
+  };
+
+  const exampleLink = getRealExample();
+
   return (
     <Card className="bg-mathdev-secondary border-mathdev-primary/20 overflow-hidden card-hover">
-      {/* Image Section
+      {/* Image Section - comentado para manter a consistência com o design atual
       <div className="aspect-video overflow-hidden">
         <img 
           src={service.image} 
@@ -47,6 +65,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <p className="mt-2 text-gray-400 text-sm">
           {service.description}
         </p>
+
+        {exampleLink && (
+          <a 
+            href={exampleLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-mathdev-primary hover:underline text-sm"
+          >
+            Ver exemplo real
+            <ExternalLink size={14} className="inline-block ml-1" />
+          </a>
+        )}
 
         <div className="mt-4 flex flex-col sm:flex-row gap-2">
           <button

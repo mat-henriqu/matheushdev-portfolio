@@ -7,34 +7,34 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 const portfolioItems = [
   {
     id: 1,
+    title: 'Website Institucional - Psicólogo',
+    type: 'Website Institucional',
+    description: 'Site profissional para psicólogo com apresentação de serviços, informações sobre o profissional e formulário de contato.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    link: 'https://psijoaocorrea.site'
+  },
+  {
+    id: 2,
+    title: 'Página de Links Pessoal',
+    type: 'Página de Links',
+    description: 'Solução centralizada para gerenciar todos os links importantes em um só lugar, semelhante ao Linktree.',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80',
+    link: 'https://mat-henriqu.github.io/link-tree/'
+  },
+  {
+    id: 3,
+    title: 'Website Pessoal e Portfólio',
+    type: 'Website Pessoal',
+    description: 'Site pessoal que funciona como currículo digital e cartão de visitas online, apresentando habilidades e projetos.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
+    link: 'https://mat-henriqu.netlify.app'
+  },
+  {
+    id: 4,
     title: 'E-commerce de Moda',
     type: 'E-commerce',
     description: 'Loja online completa para uma marca de moda emergente, com integração de pagamentos e gestão de estoque.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
-    link: '#'
-  },
-  {
-    id: 2,
-    title: 'Landing Page Corporativa',
-    type: 'Landing Page',
-    description: 'Página de conversão para uma empresa de consultoria financeira, aumentando as taxas de lead em 35%.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
-    link: '#'
-  },
-  {
-    id: 3,
-    title: 'Site Institucional',
-    type: 'Website Institucional',
-    description: 'Website completo para uma clínica médica, incluindo sistema de agendamento online.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
-    link: '#'
-  },
-  {
-    id: 4,
-    title: 'Página de Links para Influenciador',
-    type: 'Página de Links',
-    description: 'Solução centralizada para um influenciador digital gerenciar todos os seus links em um só lugar.',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80',
     link: '#'
   }
 ];
@@ -114,19 +114,19 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: 'Maria Silva',
-                role: 'CEO, Empresa de Moda',
-                testimonial: 'O MatheushDev superou todas as expectativas. Nosso e-commerce teve um aumento de 40% nas vendas após o lançamento do novo site.'
+                name: 'João Correa',
+                role: 'Psicólogo Clínico',
+                testimonial: 'Meu site institucional ficou exatamente como eu queria. Profissional, limpo e com todas as funcionalidades que precisava para apresentar meu trabalho.'
               },
               {
-                name: 'João Pereira',
-                role: 'Consultor Financeiro',
-                testimonial: 'A landing page desenvolvida pelo MatheushDev transformou meu negócio. A taxa de conversão aumentou significativamente.'
+                name: 'Lucas Pereira',
+                role: 'Designer Digital',
+                testimonial: 'A página de links desenvolvida pelo MatheushDev transformou minha presença digital. Agora consigo direcionar meu público de forma muito mais eficiente.'
               },
               {
                 name: 'Ana Costa',
-                role: 'Médica, Clínica Saúde Plena',
-                testimonial: 'Profissionalismo e qualidade do início ao fim. O site institucional da nossa clínica ficou exatamente como queríamos.'
+                role: 'Empreendedora',
+                testimonial: 'O e-commerce que desenvolveram para minha marca superou as expectativas. Interface intuitiva e integração perfeita com os sistemas de pagamento.'
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-mathdev-dark p-6 rounded-lg border border-mathdev-primary/10">

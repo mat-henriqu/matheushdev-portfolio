@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
             <br />
             Crie uma experiência digital que impressiona.
           </p>
-          {/* Button Links removed for simplicity 
+          
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Link
               to="/servicos"
@@ -31,16 +31,14 @@ const Hero: React.FC = () => {
               <ArrowRight size={16} className="ml-2" />
             </Link>
 
-            <a
-              href="https://wa.me/+5534997638331"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outlined px-6 py-2"
+            <Link
+              to="/portfolio"
+              className="btn-outlined px-6 py-2 flex items-center justify-center"
             >
-              Fale Comigo
-            </a>
+              Ver Portfólio
+              <ArrowRight size={16} className="ml-2" />
+            </Link>
           </div>
-          */}
         </div>
       </div>
     </section>
