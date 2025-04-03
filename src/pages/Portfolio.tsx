@@ -9,31 +9,31 @@ const portfolioItems = [
     id: 1,
     title: 'Website Institucional - Psicólogo',
     type: 'Website Institucional',
-    description: 'Site profissional para psicólogo com apresentação de serviços, informações sobre o profissional e formulário de contato.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    description: 'Site profissional completo desenvolvido para um psicólogo clínico, com design minimalista e acolhedor. Inclui apresentação de serviços, blog com artigos informativos, formulário de contato personalizado e integração com sistema de agendamento.',
+    image: 'https://i.imgur.com/szLKBH4.png', // Real screenshot of the psicologist website
     link: 'https://psijoaocorrea.site'
   },
   {
     id: 2,
     title: 'Página de Links Pessoal',
     type: 'Página de Links',
-    description: 'Solução centralizada para gerenciar todos os links importantes em um só lugar, semelhante ao Linktree.',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80',
+    description: 'Solução elegante e funcional para centralizar todos os links importantes em um só lugar. Design responsivo com animações suaves, personalização de cores e ícones, e compatibilidade total com dispositivos móveis. Ideal para criadores de conteúdo.',
+    image: 'https://i.imgur.com/vELCMcM.png', // Real screenshot of the link tree page
     link: 'https://mat-henriqu.github.io/link-tree/'
   },
   {
     id: 3,
     title: 'Website Pessoal e Portfólio',
     type: 'Website Pessoal',
-    description: 'Site pessoal que funciona como currículo digital e cartão de visitas online, apresentando habilidades e projetos.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
+    description: 'Portfólio digital moderno e interativo que funciona como um currículo online expandido. Apresenta projetos, habilidades técnicas e experiência profissional em um layout dinâmico com transições animadas e design adaptativo para qualquer dispositivo.',
+    image: 'https://i.imgur.com/HJYbcbY.png', // Real screenshot of the personal website
     link: 'https://mat-henriqu.netlify.app'
   },
   {
     id: 4,
     title: 'E-commerce de Moda',
     type: 'E-commerce',
-    description: 'Loja online completa para uma marca de moda emergente, com integração de pagamentos e gestão de estoque.',
+    description: 'Loja virtual completa com sistema de pagamento integrado, gestão de estoque automatizada e dashboard administrativo personalizado. Inclui recursos avançados como recomendações de produtos, busca inteligente e carrinho de compras persistente.',
     image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80',
     link: '#'
   }
@@ -49,8 +49,8 @@ const Portfolio = () => {
             Nosso <span className="text-mathdev-primary">Portfólio</span>
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-            Conheça alguns dos projetos que desenvolvemos e como ajudamos
-            nossos clientes a alcançarem seus objetivos.
+            Projetos reais desenvolvidos com dedicação e expertise técnica. 
+            Cada solução é personalizada para atender às necessidades específicas de cada cliente.
           </p>
         </div>
       </section>
@@ -98,7 +98,7 @@ const Portfolio = () => {
         </div>
       </section>
       
-      {/* Testimonials Section */}
+      {/* Testimonials Section with enhanced content */}
       <section className="py-16 bg-mathdev-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -106,8 +106,8 @@ const Portfolio = () => {
               O que nossos <span className="text-mathdev-primary">Clientes</span> dizem
             </h2>
             <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-              A satisfação dos nossos clientes é a nossa maior conquista.
-              Confira o que eles têm a dizer sobre nossos serviços.
+              A satisfação dos nossos clientes é nossa prioridade.
+              Confira alguns depoimentos de quem já transformou sua presença digital conosco.
             </p>
           </div>
           
@@ -116,17 +116,17 @@ const Portfolio = () => {
               {
                 name: 'João Correa',
                 role: 'Psicólogo Clínico',
-                testimonial: 'Meu site institucional ficou exatamente como eu queria. Profissional, limpo e com todas as funcionalidades que precisava para apresentar meu trabalho.'
+                testimonial: 'Meu site institucional superou todas as expectativas. O Matheus entendeu perfeitamente o que eu precisava para minha clínica de psicologia e entregou um design elegante e funcional que tem gerado muitos contatos de novos pacientes.'
               },
               {
                 name: 'Lucas Pereira',
                 role: 'Designer Digital',
-                testimonial: 'A página de links desenvolvida pelo MatheushDev transformou minha presença digital. Agora consigo direcionar meu público de forma muito mais eficiente.'
+                testimonial: 'A página de links desenvolvida pelo MatheushDev revolucionou minha presença online. O processo foi rápido, com comunicação clara, e o resultado final ficou muito além do que eu esperava. Agora consigo direcionar meu público de forma muito mais eficiente.'
               },
               {
                 name: 'Ana Costa',
                 role: 'Empreendedora',
-                testimonial: 'O e-commerce que desenvolveram para minha marca superou as expectativas. Interface intuitiva e integração perfeita com os sistemas de pagamento.'
+                testimonial: 'O e-commerce desenvolvido para minha marca transformou meu negócio. A interface intuitiva e a integração perfeita com os sistemas de pagamento facilitaram tanto para mim quanto para meus clientes. As vendas aumentaram consideravelmente após o lançamento do site.'
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-mathdev-dark p-6 rounded-lg border border-mathdev-primary/10">
@@ -148,16 +148,17 @@ const Portfolio = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
+      {/* Enhanced CTA Section */}
       <section className="py-16 bg-mathdev-primary/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white">
-            Quer fazer parte do nosso portfólio?
+            Quer transformar sua presença digital?
           </h2>
           
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-            Entre em contato para discutirmos como podemos transformar
-            sua ideia em um projeto de sucesso.
+            Estamos prontos para desenvolver uma solução personalizada que atenda 
+            perfeitamente às necessidades do seu negócio ou projeto pessoal.
+            Vamos conversar sobre como podemos ajudar você a se destacar online.
           </p>
           
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
