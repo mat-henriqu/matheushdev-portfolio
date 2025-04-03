@@ -37,6 +37,10 @@ const Index = () => {
   return (
     <Layout>
       <Hero />
+      
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
+      
       <section className="py-12 bg-mathdev-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
@@ -63,7 +67,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section - versão mais leve */}
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-primary/10"></div>
+
+      {/* Why Choose Us Section */}
       <section className="py-12 bg-mathdev-primary/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -106,7 +113,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section - versão simplificada */}
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-primary/10 to-mathdev-primary/10"></div>
+
+      {/* CTA Section */}
       <section className="py-12 bg-mathdev-primary/10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">

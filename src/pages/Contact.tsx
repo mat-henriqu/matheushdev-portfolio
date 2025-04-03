@@ -18,7 +18,7 @@ import FAQSection from '@/components/contact/FAQSection';
 const Contact: React.FC = () => {
   return (
     <Layout>
-      {/* Cabeçalho da página */}
+      {/* Cabeçalho da página com gradiente */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-mathdev-primary/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
@@ -30,6 +30,9 @@ const Contact: React.FC = () => {
           </p>
         </div>
       </section>
+      
+      {/* Transição gradiente */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
       
       {/* Cartões de Contato */}
       <section className="py-10 bg-mathdev-dark">
@@ -80,6 +83,9 @@ const Contact: React.FC = () => {
         </div>
       </section>
       
+      {/* Transição gradiente */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-dark"></div>
+      
       {/* Formulário de Contato */}
       <section className="py-16 bg-mathdev-dark">
         <div className="container mx-auto px-4">
@@ -94,6 +100,9 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      {/* Transição gradiente */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-secondary"></div>
       
       {/* Seção de FAQs */}
       <FAQSection />

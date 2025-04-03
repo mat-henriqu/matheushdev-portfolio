@@ -16,7 +16,7 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <section className="py-32 min-h-screen flex items-center">
+      <section className="py-32 min-h-screen flex items-center bg-gradient-to-b from-mathdev-primary/5 to-mathdev-dark">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-6xl md:text-8xl font-bold text-mathdev-primary mb-6">404</h1>
           <h2 className="text-3xl font-bold text-white mb-4">Página não encontrada</h2>

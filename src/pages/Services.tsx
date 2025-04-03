@@ -60,7 +60,7 @@ const services: ServiceItem[] = [
 const Services = () => {
   return (
     <Layout>
-      {/* Header */}
+      {/* Header with gradient */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-mathdev-primary/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
@@ -73,6 +73,9 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
+
       {/* Services Grid */}
       <section className="py-16 bg-mathdev-dark">
         <div className="container mx-auto px-4">
@@ -83,6 +86,9 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-secondary"></div>
 
       {/* Process Section */}
       <section className="py-16 bg-mathdev-secondary">
@@ -135,6 +141,9 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-secondary to-mathdev-primary/10"></div>
 
       {/* CTA Section */}
       <section className="py-16 bg-mathdev-primary/10">
