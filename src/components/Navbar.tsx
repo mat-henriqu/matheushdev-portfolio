@@ -49,10 +49,10 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <NavLink to="/" label="Home" />
-            <NavLink to="/servicos" label="Serviços" />
-            <NavLink to="/portfolio" label="Portfólio" />
-            <NavLink to="/sobre" label="Sobre" />
-            <NavLink to="/contato" label="Contato" />
+            <NavLink to="/matheushdev-potfolio/servicos" label="Serviços" />
+            <NavLink to="/matheushdev-potfolio/portfolio" label="Portfólio" />
+            <NavLink to="/matheushdev-potfolio/sobre" label="Sobre" />
+            <NavLink to="/matheushdev-potfolio/contato" label="Contato" />
           </nav>
 
           {/* Right Section - Cart & Call to Action */}
@@ -120,10 +120,10 @@ const Navbar: React.FC = () => {
           <div className="md:hidden mt-4 py-4 bg-mathdev-secondary rounded-lg animate-fade-in">
             <nav className="flex flex-col space-y-4 px-4">
               <MobileNavLink to="/" label="Home" />
-              <MobileNavLink to="/servicos" label="Serviços" />
-              <MobileNavLink to="/portfolio" label="Portfólio" />
-              <MobileNavLink to="/sobre" label="Sobre" />
-              <MobileNavLink to="/contato" label="Contato" />
+              <MobileNavLink to="/matheushdev-potfolio/servicos" label="Serviços" />
+              <MobileNavLink to="/matheushdev-potfolio/portfolio" label="Portfólio" />
+              <MobileNavLink to="/matheushdev-potfolio/sobre" label="Sobre" />
+              <MobileNavLink to="/matheushdev-potfolio/contato" label="Contato" />
               <a 
                 href="https://wa.me/+5534997638331" 
                 target="_blank" 

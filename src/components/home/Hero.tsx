@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Link
-              to="/servicos"
+              to="/matheushdev-potfolio/servicos"
               className="btn-primary px-6 py-2 flex items-center justify-center"
             >
               Serviços
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             </Link>
 
             <Link
-              to="/portfolio"
+              to="/matheushdev-potfolio/portfolio"
               className="btn-outlined px-6 py-2 flex items-center justify-center"
             >
               Ver Portfólio

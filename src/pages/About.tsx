@@ -182,7 +182,7 @@ const About = () => {
             </a>
             
             <a 
-              href="/servicos" 
+              href="/matheushdev-potfolio/servicos" 
               className="inline-flex items-center justify-center btn-outlined px-8 py-3"
             >
               Ver Serviços
