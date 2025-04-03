@@ -2,7 +2,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import { CartProvider } from "@/context/CartContext";
 
 // Pages
@@ -27,7 +27,7 @@ const App = () => (
     <CartProvider>
       <TooltipProvider>
         <Toaster />
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/matheushdev-potfolio" element={<Index />} />
             <Route path="/matheushdev-potfolio/servicos" element={<Services />} />
@@ -36,7 +36,7 @@ const App = () => (
             <Route path="/matheushdev-potfolio/contato" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </TooltipProvider>
     </CartProvider>
   </QueryClientProvider>

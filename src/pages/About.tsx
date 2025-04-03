@@ -2,6 +2,7 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import { Check, ArrowRight } from 'lucide-react';
+import IMG_2152 from '@/assets/img/IMG_2152.png';
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
       <section className="pt-32 pb-16 bg-gradient-to-b from-mathdev-primary/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
-            Sobre a <span className="text-mathdev-primary">MatheushDev</span>
+            Sobre <span className="text-mathdev-primary">MatheushDev</span>
           </h1>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
             Conheça mais sobre nossa história, valores e a paixão por criar
@@ -52,9 +53,9 @@ const About = () => {
             
             <div className="order-1 lg:order-2 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80" 
+                src={IMG_2152}
                 alt="MatheushDev" 
-                className="w-full h-full object-cover"
+                className="object-cover h-96 items-center w-full"
               />
             </div>
           </div>
