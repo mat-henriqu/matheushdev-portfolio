@@ -6,7 +6,7 @@ import { Check, ArrowRight } from 'lucide-react';
 const About = () => {
   return (
     <Layout>
-      {/* Header */}
+      {/* Header with gradient - already has gradient */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-mathdev-primary/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
@@ -18,6 +18,9 @@ const About = () => {
           </p>
         </div>
       </section>
+      
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
       
       {/* About Section */}
       <section className="py-16 bg-mathdev-dark">
@@ -57,6 +60,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-secondary"></div>
       
       {/* Mission, Vision, Values */}
       <section className="py-16 bg-mathdev-secondary">
@@ -117,6 +123,9 @@ const About = () => {
         </div>
       </section>
       
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-secondary to-mathdev-dark"></div>
+      
       {/* Skills and Technologies */}
       <section className="py-16 bg-mathdev-dark">
         <div className="container mx-auto px-4">
@@ -146,6 +155,9 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      {/* Transition gradient */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-primary/10"></div>
       
       {/* CTA Section */}
       <section className="py-16 bg-mathdev-primary/10">
