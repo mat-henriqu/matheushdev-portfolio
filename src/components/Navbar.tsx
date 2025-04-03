@@ -42,17 +42,17 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/matheushdev-potfolio" className="text-2xl font-bold text-white">
+          <Link to="/" className="text-2xl font-bold text-white">
             <span className="text-mathdev-primary">Matheush</span>Dev
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <NavLink to="/matheushdev-potfolio" label="Home" />
-            <NavLink to="/matheushdev-potfolio/servicos" label="Serviços" />
-            <NavLink to="/matheushdev-potfolio/portfolio" label="Portfólio" />
-            <NavLink to="/matheushdev-potfolio/sobre" label="Sobre" />
-            <NavLink to="/matheushdev-potfolio/contato" label="Contato" />
+            <NavLink to="/" label="Home" />
+            <NavLink to="/servicos" label="Serviços" />
+            <NavLink to="/portfolio" label="Portfólio" />
+            <NavLink to="/sobre" label="Sobre" />
+            <NavLink to="/contato" label="Contato" />
           </nav>
 
           {/* Right Section - Cart & Call to Action */}
@@ -120,10 +120,10 @@ const Navbar: React.FC = () => {
           <div className="md:hidden mt-4 py-4 bg-mathdev-secondary rounded-lg animate-fade-in">
             <nav className="flex flex-col space-y-4 px-4">
               <MobileNavLink to="/" label="Home" />
-              <MobileNavLink to="/matheushdev-potfolio/servicos" label="Serviços" />
-              <MobileNavLink to="/matheushdev-potfolio/portfolio" label="Portfólio" />
-              <MobileNavLink to="/matheushdev-potfolio/sobre" label="Sobre" />
-              <MobileNavLink to="/matheushdev-potfolio/contato" label="Contato" />
+              <MobileNavLink to="/servicos" label="Serviços" />
+              <MobileNavLink to="/portfolio" label="Portfólio" />
+              <MobileNavLink to="/sobre" label="Sobre" />
+              <MobileNavLink to="/contato" label="Contato" />
               <a 
                 href="https://wa.me/+5534997638331" 
                 target="_blank" 

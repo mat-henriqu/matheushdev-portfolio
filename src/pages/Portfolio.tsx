@@ -173,7 +173,7 @@ const Portfolio = () => {
             </a>
 
             <a
-              href="/matheushdev-potfolio/servicos"
+              href="/servicos"
               className="inline-flex items-center justify-center btn-outlined px-8 py-3"
             >
               Ver Serviços

@@ -29,11 +29,11 @@ const App = () => (
         <Toaster />
         <HashRouter>
           <Routes>
-            <Route path="/matheushdev-potfolio" element={<Index />} />
-            <Route path="/matheushdev-potfolio/servicos" element={<Services />} />
-            <Route path="/matheushdev-potfolio/portfolio" element={<Portfolio />} />
-            <Route path="/matheushdev-potfolio/sobre" element={<About />} />
-            <Route path="/matheushdev-potfolio/contato" element={<Contact />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/servicos" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/sobre" element={<About />} />
+            <Route path="/contato" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>

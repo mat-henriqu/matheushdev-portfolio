@@ -32,22 +32,22 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/matheushdev-potfolio/servicos" className="text-gray-400 hover:text-mathdev-primary transition-colors">
+                <Link to="/servicos" className="text-gray-400 hover:text-mathdev-primary transition-colors">
                   Serviços
                 </Link>
               </li>
               <li>
-                <Link to="/matheushdev-potfolio/portfolio" className="text-gray-400 hover:text-mathdev-primary transition-colors">
+                <Link to="/portfolio" className="text-gray-400 hover:text-mathdev-primary transition-colors">
                   Portfólio
                 </Link>
               </li>
               <li>
-                <Link to="/matheushdev-potfolio/sobre" className="text-gray-400 hover:text-mathdev-primary transition-colors">
+                <Link to="/sobre" className="text-gray-400 hover:text-mathdev-primary transition-colors">
                   Sobre
                 </Link>
               </li>
               <li>
-                <Link to="/matheushdev-potfolio/contato" className="text-gray-400 hover:text-mathdev-primary transition-colors">
+                <Link to="/contato" className="text-gray-400 hover:text-mathdev-primary transition-colors">
                   Contato
                 </Link>
               </li>

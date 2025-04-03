@@ -59,7 +59,7 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-8">
-            <Link to="/matheushdev-potfolio/servicos" className="inline-flex items-center text-mathdev-primary hover:underline">
+            <Link to="/servicos" className="inline-flex items-center text-mathdev-primary hover:underline">
               Ver todos os serviços
               <ArrowRight size={16} className="ml-2" />
             </Link>
@@ -95,7 +95,7 @@ const Index = () => {
               </ul>
 
               <div className="mt-6">
-                <Link to="/matheushdev-potfolio/sobre" className="btn-primary inline-flex items-center">
+                <Link to="/sobre" className="btn-primary inline-flex items-center">
                   Conheça mais sobre
                   <ArrowRight size={16} className="ml-2" />
                 </Link>
@@ -133,7 +133,7 @@ const Index = () => {
               Fale Comigo no WhatsApp
             </a>
 
-            <Link to="/matheushdev-potfolio/contato" className="btn-outlined px-6 py-2">
+            <Link to="/contato" className="btn-outlined px-6 py-2">
               Formulário de Contato
             </Link>
           </div>
