@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <NavLink to="/" label="Home" />
+            <NavLink to="/matheushdev-potfolio" label="Home" />
             <NavLink to="/matheushdev-potfolio/servicos" label="Serviços" />
             <NavLink to="/matheushdev-potfolio/portfolio" label="Portfólio" />
             <NavLink to="/matheushdev-potfolio/sobre" label="Sobre" />
