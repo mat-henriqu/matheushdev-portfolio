@@ -42,7 +42,7 @@ const portfolioItems = [
 const Portfolio = () => {
   return (
     <Layout>
-      {/* Header */}
+      {/* Header com gradient suave */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-mathdev-primary/10 to-transparent">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white">
@@ -54,6 +54,9 @@ const Portfolio = () => {
           </p>
         </div>
       </section>
+      
+      {/* Área de transição entre o header e o grid */}
+      <div className="h-20 bg-gradient-to-b from-transparent to-mathdev-dark"></div>
       
       {/* Portfolio Grid */}
       <section className="py-16 bg-mathdev-dark">
@@ -97,6 +100,9 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+      
+      {/* Área de transição entre o grid e os depoimentos */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-dark to-mathdev-secondary"></div>
       
       {/* Testimonials Section with enhanced content */}
       <section className="py-16 bg-mathdev-secondary">
@@ -147,6 +153,9 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
+      
+      {/* Área de transição entre os depoimentos e o CTA */}
+      <div className="h-20 bg-gradient-to-b from-mathdev-secondary to-mathdev-primary/10"></div>
       
       {/* Enhanced CTA Section */}
       <section className="py-16 bg-mathdev-primary/10">
