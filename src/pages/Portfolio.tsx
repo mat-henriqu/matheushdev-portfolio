@@ -10,21 +10,16 @@ const portfolioItems = [
     title: 'Website Institucional - Psicólogo',
     type: 'Website Institucional',
     description: 'Site profissional completo desenvolvido para um psicólogo clínico, com design minimalista e acolhedor. Inclui apresentação de serviços, blog com artigos informativos, formulário de contato personalizado e integração com sistema de agendamento.',
-    link: 'https://psijoaocorrea.site'
+    link: 'https://psijoaocorrea.site',
+    image: 'https://iad.microlink.io/fFLmUwFXWCsmrCWB4tvRIkqPOgyXWBZK14shNbSl8Vo2Am_dkt92XlJfeKSdvWJEaNa5ieS0WlboVOg42MJfhg.png'
   },
   {
     id: 2,
-    title: 'Página de Links Pessoal',
-    type: 'Página de Links',
-    description: 'Solução elegante e funcional para centralizar todos os links importantes em um só lugar. Design responsivo com animações suaves, personalização de cores e ícones, e compatibilidade total com dispositivos móveis. Ideal para criadores de conteúdo.',
-    link: 'https://mat-henriqu.github.io/link-tree/'
-  },
-  {
-    id: 3,
     title: 'Website Pessoal e Portfólio',
     type: 'Website Pessoal',
     description: 'Portfólio digital moderno e interativo que funciona como um currículo online expandido. Apresenta projetos, habilidades técnicas e experiência profissional em um layout dinâmico com transições animadas e design adaptativo para qualquer dispositivo.',
-    link: 'https://mat-henriqu.netlify.app'
+    link: 'https://mat-henriqu.netlify.app',
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Fmat-henriqu.netlify.app&overlay.browser=dark&screenshot=true&embed=screenshot.url',
   }
 ];
 
@@ -53,15 +48,15 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioItems.map((item) => (
               <Card key={item.id} className="bg-mathdev-secondary border-mathdev-primary/20 overflow-hidden card-hover">
-                {/* Card Header with gradient background 
+                {/* Card com imagem de fundo e animação suave */} 
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    className="w-full h-100 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                */}
+                
 
                 <div className="p-6">
                   <div className="text-mathdev-primary text-sm font-medium mb-2">
