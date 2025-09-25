@@ -7,19 +7,19 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 const portfolioItems = [
   {
     id: 1,
-    title: 'Website Institucional - Psicólogo',
+    title: 'Site para um profissional em Psicologia',
     type: 'Website Institucional',
     description: 'Site profissional completo desenvolvido para um psicólogo clínico, com design minimalista e acolhedor. Inclui apresentação de serviços, blog com artigos informativos, formulário de contato personalizado e integração com sistema de agendamento.',
     link: 'https://psijoaocorrea.site',
-    image: 'https://iad.microlink.io/fFLmUwFXWCsmrCWB4tvRIkqPOgyXWBZK14shNbSl8Vo2Am_dkt92XlJfeKSdvWJEaNa5ieS0WlboVOg42MJfhg.png'
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Fpsijoaocorrea.site&overlay.browser=dark&screenshot=true&embed=screenshot.url'
   },
   {
     id: 2,
-    title: 'Website Pessoal e Portfólio',
+    title: 'Site para servir como apresentação pessoal',
     type: 'Website Pessoal',
     description: 'Portfólio digital moderno e interativo que funciona como um currículo online expandido. Apresenta projetos, habilidades técnicas e experiência profissional em um layout dinâmico com transições animadas e design adaptativo para qualquer dispositivo.',
     link: 'https://mat-henriqu.netlify.app',
-    image: 'https://api.microlink.io/?url=https%3A%2F%2Fmat-henriqu.netlify.app&overlay.browser=dark&screenshot=true&embed=screenshot.url',
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Fmat-henriqu.netlify.app%2F&overlay.browser=dark&screenshot=true&embed=screenshot.url',
   }
 ];
 
