@@ -20,6 +20,14 @@ const portfolioItems = [
     description: 'Portfólio digital moderno e interativo que funciona como um currículo online expandido. Apresenta projetos, habilidades técnicas e experiência profissional em um layout dinâmico com transições animadas e design adaptativo para qualquer dispositivo.',
     link: 'https://mat-henriqu.netlify.app',
     image: 'https://api.microlink.io/?url=https%3A%2F%2Fmat-henriqu.netlify.app%2F&overlay.browser=dark&screenshot=true&embed=screenshot.url',
+  },
+  {
+    id: 3,
+    title: 'Site linktree/social-linking',
+    type: 'Website de Links',
+    description: 'Página de links personalizada para um designer digital, com design vibrante e visualmente atraente. Inclui links para redes sociais, portfólio de trabalhos, blog pessoal e formulário de contato, tudo em um layout responsivo e fácil de navegar.',
+    link: 'https://linktr.ee/mat_henriqu',
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Flinktr.ee%2Fmat_henriqu&overlay.browser=dark&screenshot=true&embed=screenshot.url',
   }
 ];
 
@@ -48,7 +56,7 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioItems.map((item) => (
               <Card key={item.id} className="bg-mathdev-secondary border-mathdev-primary/20 overflow-hidden card-hover">
-                {/* Card com imagem de fundo e animação suave */} 
+                {/* Card com imagem de fundo e animação suave */}
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={item.image}
@@ -56,7 +64,7 @@ const Portfolio = () => {
                     className="w-full h-100 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                
+
 
                 <div className="p-6">
                   <div className="text-mathdev-primary text-sm font-medium mb-2">
