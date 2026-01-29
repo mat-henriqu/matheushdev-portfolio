@@ -11,7 +11,7 @@ const portfolioItems = [
     type: 'Website Institucional',
     description: 'Site profissional completo desenvolvido para um psicólogo clínico, com design minimalista e acolhedor. Inclui apresentação de serviços, blog com artigos informativos, formulário de contato personalizado e integração com sistema de agendamento.',
     link: 'https://psijoaocorrea.site',
-    image: 'https://api.microlink.io/?url=https%3A%2F%2Fpsijoaocorrea.site&overlay.browser=dark&screenshot=true&embed=screenshot.url'
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Fpsijoaocorrea.site&overlay.browser=dark&screenshot=true&embed=screenshot.url&colorScheme=dark'
   },
   {
     id: 2,
@@ -23,11 +23,11 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: 'Site linktree/social-linking',
-    type: 'Website de Links',
-    description: 'Página de links personalizada para um designer digital, com design vibrante e visualmente atraente. Inclui links para redes sociais, portfólio de trabalhos, blog pessoal e formulário de contato, tudo em um layout responsivo e fácil de navegar.',
-    link: 'https://linktr.ee/mat_henriqu',
-    image: 'https://api.microlink.io/?url=https%3A%2F%2Flinktr.ee%2Fmat_henriqu&overlay.browser=dark&screenshot=true&embed=screenshot.url',
+    title: 'Site institucional para igreja',
+    type: 'Website de Igreja',
+    description: 'Site moderno e envolvente para igreja, com telas que destacam cultos, departamentos, pastores, eventos e informações relevantes para membros e visitantes. Foco em experiência do usuário, gerenciamento de conteúdos e integração com redes sociais.',
+    link: 'https://igrejaamareservir.com/',
+    image: 'https://api.microlink.io/?url=https%3A%2F%2Fweb-dev.igrejaamareservir.com%2F&screenshot=true&embed=screenshot.url&overlay.browser=dark&waitForSelector=.swiper&colorScheme=dark',
   }
 ];
 
