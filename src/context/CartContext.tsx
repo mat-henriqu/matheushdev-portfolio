@@ -1,5 +1,6 @@
+import { CartContext } from './useCart';
 
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { ServiceItem, CartState } from '../types/cart';
 
 type CartAction = 
@@ -8,19 +9,13 @@ type CartAction =
   | { type: 'UPDATE_COMMENTS'; payload: { id: string; comments: string } }
   | { type: 'CLEAR_CART' };
 
-interface CartContextType {
-  cart: CartState;
-  addToCart: (item: ServiceItem) => void;
-  removeFromCart: (id: string) => void;
-  updateComments: (id: string, comments: string) => void;
-  clearCart: () => void;
-}
+
 
 const initialState: CartState = {
   items: []
 };
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -93,10 +88,3 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   );
 };
 
-export const useCart = (): CartContextType => {
-  const context = useContext(CartContext);
-  if (context === undefined) {
-    throw new Error('useCart must be used within a CartProvider');
-  }
-  return context;
-};

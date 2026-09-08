@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/context/useCart';
 import { ServiceItem } from '@/types/cart';
 import { useToast } from '@/components/ui/use-toast';
 import { ShoppingCart, ExternalLink } from 'lucide-react';

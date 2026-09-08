@@ -1,6 +1,6 @@
 
 import React, { useRef } from 'react';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/context/useCart';
 import { X, ExternalLink, Trash2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 

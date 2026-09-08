@@ -15,9 +15,15 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
   ].filter(Boolean),
   base: "/matheushdev-portfolio",
+  build: {
+    rolldownOptions: {
+      // Desativa apenas o diagnostico de tempo dos plugins.
+      checks: { pluginTimings: false },
+    },
+  },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
 }));

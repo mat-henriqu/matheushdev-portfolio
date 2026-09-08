@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/context/useCart';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import CartDropdown from './CartDropdown';
 
