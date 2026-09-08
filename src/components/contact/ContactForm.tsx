@@ -30,9 +30,6 @@ const ContactForm: React.FC = () => {
     subject: '',
     message: ''
   });
-  // Estado para controlar o envio do formulário
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   /**
    * Manipula as mudanças nos campos do formulário
    */
@@ -46,53 +43,8 @@ const ContactForm: React.FC = () => {
    */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Registra os dados do formulário no console para depuração
-    console.log('Formulário enviado:', formData);
-    
-    // Cria um assunto formatado para o email
-    const emailSubject = encodeURIComponent(`Contato do Site: ${formData.subject}`);
-    
-    // Cria o corpo do email com formatação HTML
-    const htmlEmailBody = `
-      <html>
-        <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 5px;">
-          <h2 style="color: #6B21A8; border-bottom: 1px solid #eee; padding-bottom: 10px;">Novo Contato Via Site</h2>
-          
-          <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold; width: 120px;">Nome:</td>
-              <td style="padding: 8px 0;">${formData.name}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold;">Email:</td>
-              <td style="padding: 8px 0;"><a href="mailto:${formData.email}" style="color: #6B21A8;">${formData.email}</a></td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold;">Telefone:</td>
-              <td style="padding: 8px 0;">${formData.phone || 'Não informado'}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px 0; font-weight: bold;">Assunto:</td>
-              <td style="padding: 8px 0;">${formData.subject}</td>
-            </tr>
-          </table>
-          
-          <div style="background-color: #f9f9f9; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-            <h3 style="margin-top: 0; color: #6B21A8;">Mensagem:</h3>
-            <p style="white-space: pre-line;">${formData.message}</p>
-          </div>
-          
-          <p style="font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 10px; margin-top: 20px;">
-            Esta mensagem foi enviada através do formulário de contato em <a href="https://matheushdev.com" style="color: #6B21A8;">MatheushDev.com</a> em ${new Date().toLocaleString('pt-BR')}
-          </p>
-        </body>
-      </html>
-    `;
 
-    // Cria uma versão em texto simples para o corpo do email
-    // (necessário porque mailto: não suporta formatação HTML)
+    const emailSubject = encodeURIComponent(`Contato do Site: ${formData.subject}`);
     const plainTextEmailBody = encodeURIComponent(
       `NOVO CONTATO VIA SITE\n\n` +
       `Nome: ${formData.name}\n` +
@@ -103,26 +55,12 @@ const ContactForm: React.FC = () => {
       `Enviado via formulário de contato do site MatheushDev em ${new Date().toLocaleString('pt-BR')}`
     );
     
-    // Abre o cliente de email do usuário com o email pré-preenchido
     window.location.href = `mailto:theush933@gmail.com?subject=${emailSubject}&body=${plainTextEmailBody}`;
-    
-    // Exibe uma mensagem de sucesso
+
     toast({
-      title: "Mensagem preparada para envio!",
-      description: "Seu cliente de email foi aberto com os detalhes do formulário. Por favor, envie a mensagem para completar o contato.",
+      title: "E-mail preparado para envio",
+      description: "Revise e envie a mensagem no seu aplicativo de e-mail. Os dados permanecem neste formulário.",
     });
-    
-    // Reseta o estado de envio e o formulário após um delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
-    }, 2500);
   };
 
   return (
@@ -224,18 +162,9 @@ const ContactForm: React.FC = () => {
         <button
           type="submit"
           className="btn-primary flex items-center justify-center gap-2 px-8 py-3 w-full sm:w-auto"
-          disabled={isSubmitting}
         >
-          {isSubmitting ? (
-            <>
-              <span className="animate-pulse">Preparando...</span>
-            </>
-          ) : (
-            <>
-              <Send size={18} />
-              <span>Enviar Mensagem</span>
-            </>
-          )}
+          <Send size={18} />
+          <span>Preparar E-mail</span>
         </button>
       </form>
     </div>

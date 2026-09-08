@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import { Card } from '@/components/ui/card';
 import { ExternalLink, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const portfolioItems = [
   {
@@ -61,6 +62,10 @@ const Portfolio = () => {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
+                    onError={(event) => {
+                      event.currentTarget.src = '/matheushdev-portfolio/social-preview.png';
+                    }}
                     className="w-full h-100 object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
@@ -175,13 +180,13 @@ const Portfolio = () => {
               Solicitar Orçamento
             </a>
 
-            <a
-              href="/servicos"
+            <Link
+              to="/servicos"
               className="inline-flex items-center justify-center btn-outlined px-8 py-3"
             >
               Ver Serviços
               <ArrowRight size={18} className="ml-2" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
